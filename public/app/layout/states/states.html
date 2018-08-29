@@ -1,0 +1,144 @@
+<div layout="row">
+  <span flex></span>
+  <div>
+  <img style="width: 100%" src="../img/tools/graphics/state.png" alt="states"/>
+  </div>
+  <span flex></span>
+</div>
+<div layout="row">
+  <span flex></span>
+  <div id="stateInfoContainer" ng-hide="(states.activeState==null)" layout="column" flex="100" class="md-whiteframe-6dp" style="max-width: 812px">
+  <div layout="row" class="state-title background-party-{{states.activeState.ctl.party}}">
+    <span flex></span>
+    <div><h2>{{states.activeState.state}}</h2></div>
+    <span flex></span>
+  </div>
+  <div class="info-graphic-container" layout="row" layout-xs="column">
+    <div layout="column" flex="60" flex-xs="50">
+      <div class="upper-container" layout="row">
+        <span flex></span>
+        <div>
+          <div><h3>Upper Chamber</h3></div>
+          <div class="chart-container">
+            <canvas style="height: 100px" class="chart chart-doughnut" chart-data="data_upper" chart-labels="labels" chart-series="series" chart-click="onClick"></canvas>
+          </div>
+        </div>
+        <div><h4><span class="party-R">{{states.activeState.upperR}}</span>/<span class="party-D">{{states.activeState.upperD}}</span></h4></div>
+        <span flex></span>
+      </div>
+      <div class="lower-container" layout="row" ng-hide="(states.activeState.state == 'NEBRASKA' || states.activeState.state == 'DISTRICT OF COLUMBIA')">
+        <span flex></span>
+        <div>
+          <div><h3>Lower Chamber</h3></div>
+          <div class="chart-container">
+            <canvas style="height: 100px" class="chart chart-doughnut" chart-data="data_lower" chart-labels="labels" chart-series="series" chart-click="onClick"></canvas>
+          </div>
+        </div>
+        <div><h4><span class="party-R">{{states.activeState.lowerR}}</span>/<span class="party-D">{{states.activeState.lowerD}}</span></h4></div>
+        <span flex></span>
+      </div>
+    </div>
+    <div layou="column" flex="40">
+      <div layout="row">
+        <span flex></span>
+        <span><h3>Governor {{states.activeState.governor.name}} (<span class="party-{{states.activeState.governor.party}}">{{states.activeState.governor.party}}</span>)</h3></span>
+        <span flex></span>
+      </div>
+      <div layout="row">
+        <span flex></span>
+        <div class="percent-circle background-party-{{states.activeState.ctl.party}}">
+          <span ng-hide="(states.activeState.ctl == undefined)"><b>{{states.activeState.ctl.weight | number : "2"}}%</b></span>
+          <span ng-show="(states.activeState.ctl == undefined)"><b>NP</b></span>
+        </div>
+        <span flex="5"></span>
+        <div class="gov-img-container"><img ng-src="{{states.activeState.governor.imgUrl}}" alt="{{states.activeState.governor.name}}" /></div>
+        <span flex></span>
+      </div>
+    </div>
+  </div>
+  <div layout="row">
+    <span flex></span>
+    <div class="seeMore-container">
+      <md-button class="ripple background-party-{{states.activeState.ctl.party}} hover-party-{{states.activeState.ctl.party}}" href="/states/{{states.activeState.state.toLowerCase()}}">
+        See More
+      </md-button>
+    </div>
+  </div>
+</div>
+  <span flex></span>
+</div>
+<div layout="row" ng-hide="states.ready" layout-padding layout-margin>
+  <span flex></span>
+  <md-progress-circular md-diameter="200" md-mode="indeterminate" ></md-progress-circular>
+  <span flex></span>
+</div>
+<div id="map-container" layout="column" layout-margin>
+  <div id="map"></div>
+</div>
+
+<div layout="row">
+  <span flex></span>
+  <signup-tool></signup-tool>
+  <span flex></span>
+</div>
+<div layout="row">
+  <span flex></span>
+  <span><p>Share this page with the buttons below.</p></span>
+  <span flex></span>
+</div>
+<div layout="row">
+  <span flex></span>
+  <div class="social_media_buttons">
+    <md-button class="md-fab md-mini md-primary" aria-label="Tweet this post" style="background-color: #55acee">
+      <md-tooltip>Tweet this post</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="twitter"
+      socialshare-text="Bug your congressperson via @dataonpolitics"
+      socialshare-url="http://dataonpolitics.com/bug-your-congressperson">
+        <img class="social_icon" src="../img/icons/twitter.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini" aria-label="Share on Facebook" style="background-color: #3b5998">
+      <md-tooltip>Share on Facebook</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="facebook"
+      socialshare-url="http://dataonpolitics.com/bug-your-congressperson">
+        <img class="social_icon" src="../img/icons/facebook.png" alt="facebook"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Pin this post" style="background-color: #bd2026">
+      <md-tooltip>Pin this post</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="pinterest"
+      socialshare-text="Bug your congressperson"
+      socialshare-media="http://dataonpolitics.com/img/tools/graphics/congressConnect.png"
+      socialshare-url="http://dataonpolitics.com/bug-your-congressperson">
+        <img class="social_icon" src="../img/icons/pintrest.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Post on Tumblr" style="background-color: #35465d">
+      <md-tooltip>Post on Tumblr</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="tumblr"
+      socialshare-text="Bug your congressperson"
+      socialshare-media="http://dataonpolitics.com/img/tools/graphics/senateConnect.png"
+      socialshare-url="http://dataonpolitics.com/bug-your-congressperson">
+        <img class="social_icon" src="../img/icons/tumblr.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Post on Reddit" style="background-color: #f54b00">
+      <md-tooltip>Post on Reddit</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="reddit"
+      socialshare-url="http://dataonpolitics.com/bug-your-congressperson">
+        <img class="social_icon" src="../img/icons/reddit.png" alt="reddit"/>
+      </a>
+    </md-button>
+  </div>
+  <span flex></span>
+</div>

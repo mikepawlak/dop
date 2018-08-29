@@ -1,0 +1,22 @@
+<div id="recent" layout="column">
+  <span flex></span>
+  <div class="recent-post" ng-repeat="tool in tools.toolList">
+    <span flex></span>
+    <div layout="column">
+      <div class="recent-title">
+        <a href="{{ tool.url }}">
+          <h3>{{tool.title}}</h3>
+          <p>{{tool.summary}}</p>
+        </a>
+      </div>
+      <div class="blog-graphic">
+        <a href="{{ tool.url }}">
+          <img src="img/tools/graphics/{{tool.graphicSrc}}" alt="{{tool.graphicSrc}}" />
+        </a>
+      </div>
+      <span flex></span>
+    </div>
+    <hr/>
+  </div>
+  <span flex></span>
+</div>

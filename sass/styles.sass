@@ -1,0 +1,375 @@
+$primary-color: #1976D2
+$dark-color: #0d5196
+$secondary-color: #FF5252
+$text-light: #eef1f3
+$text-dark: #212121
+$text-accent: #757575
+$success: #4CAF50
+
+// breakpoints
+$md: "(min-width: 961px)"
+$sm: "(max-width: 960px) and (min-width: 601px)"
+$xs: "(max-width: 600px)"
+$even-smaller: "(max-width: 480px)"
+
+@media #{$md}
+  .signup_top_ask
+    display: none
+  md-grid-tile-header
+    top: 100 !important
+@media #{$sm}
+  .signup_top
+    display: none
+  .featured_infographic, .infographic
+    width: 100%
+  .recent-post
+    max-width: 100% !important
+  md-grid-tile
+    md-grid-tile-header
+      top: 100 !important
+@media #{$xs}
+  .signup_top, .signup_tool
+    display: none
+  .featured_infographic, .infographic
+    margin-left: 0px !important
+    width: 100% !important
+  .recent-post
+    max-width: 100% !important
+    padding: 0px !important
+  md-grid-tile
+    md-grid-tile-header
+      top: 70 !important
+  .blogImg
+    width: 90% !important
+  #map
+    height: 40% !important
+  .senatorCard
+    max-width: 99% !important
+
+  .senTool-title
+    max-width: 99% !important
+
+  .tool-title
+    display: block !important
+
+  .info-graphic-container
+    .chart
+      height: 75px !important
+
+  .info-graphic-container > div
+    max-width: 100% !important
+
+
+.text-icon
+  color: $success
+  vertical-align: sub
+  padding-right: 5px
+
+
+md-content
+  overflow-y: auto
+  padding-bottom: 5px
+
+.social_icon
+  height: 25px
+
+//this shit is everywhere- so it's global now
+.emph
+  color: $dark-color
+
+nav
+  background: $primary-color
+  color: $text-light
+  margin-bottom: 10px
+
+  #logo
+    width: 70%
+
+  .nav_links
+    text-decoration: none
+    color: #FFF
+
+  .nav_links:hover
+    cursor: pointer
+    color: $dark-color
+
+  #title_content
+    text-align: center
+
+  #nav_list
+    padding-left: 0px
+    li
+      padding: 5px
+      display: inline-block
+  #social_media
+    margin-top: -15px
+    padding-left: 0px
+    li
+      display: inline-block
+      padding: 5px
+
+.shareUrl
+  margin-top: 25px
+  .inputContainer
+    padding-left: 10px
+    margin-top: -4px
+  .clickCopy
+    margin-top: -10px
+    margin-left: -5px
+.blogImg
+  width: 50%
+.img_subtext
+  em
+    font-weight: normal
+
+content
+  max-width: 959px !important
+  max-height: initial !important
+  featured-post
+    display: block
+    margin: 10px
+    p
+      text-align: left
+    .subtext
+      font-family: Roboto, sans-serif
+      text-align: center
+      color: $text-accent
+      margin-top: -15px
+      .keyword
+        color: $primary-color
+
+.featured_infographic
+  margin: auto
+  width:  80%
+
+
+  img
+    width: 100%
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+.pills
+  padding-bottom: 15px
+  padding-top: 30px
+  .pillContainer
+    display: inline-block
+    margin: 2px
+    a
+      text-decoration: none
+  .pill
+    padding: 5px
+    font-size: 15px
+    color: #FFF
+    background-color: $dark-color
+    border-radius: 5px
+
+    span
+      font-size: 20px
+
+.signup_wrapper
+  margin: 10px
+.divider
+#recent
+  a
+    text-decoration: none
+    color: inherit
+
+#recent_title, #gallery_title
+  font-weight: bold
+  font-size: 20px
+  margin-top: 10px
+  margin-left: 15px
+
+  h3
+    padding-bottom: 0px
+
+.recent-post
+  padding: 15px
+  margin: 15px
+.recent-title
+
+blog
+  max-height: initial !important
+  hr
+    margin-bottom: -20px
+    margin-top: 15px
+
+.blog-graphic
+  height: 200px
+  overflow-y: hidden
+
+  img
+    width: 100%
+
+  p
+    font-family: serif
+  background: $text-light
+  margin: 5px
+  padding: 10px
+
+
+.about-container
+  padding: 15px
+
+md-content
+  text-align: center
+
+md-grid-tile
+  overflow-y: hidden
+  margin: 5px
+  padding: 10px
+  transition: padding-bottom 0.5s ease
+  md-grid-tile-header
+    padding-left: 5px
+    background: rgba(0,0,0,.58) !important
+  img
+    width: 100%
+md-grid-tile:hover
+  padding-bottom: 50px
+
+image-viewer
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+  .banner-space
+    padding-top: 5px
+    padding-bottom: 25px
+
+  .fakebanner
+    height: 125px
+    background: red
+
+  .infographic
+    display: block
+    margin-left: auto
+    margin-right: auto
+    width: 90%
+
+  .img-description
+    padding-top: 15px
+
+    .author-link
+      text-decoration: none
+      color: $primary-color
+    .author-link:hover
+      color: $dark-color
+gallery-grid
+  margin-top: 50px
+
+  md-grid-tile
+    div
+      margin: 10px
+search
+  max-height: initial !important
+  a
+    text-decoration: none
+    color: $text-dark
+
+#map
+  height: 60%
+  width: 100%
+
+
+.senTool-title
+  p
+    text-align: left
+    padding: 10px
+
+.senatorCard
+    margin: 5px
+    padding: 5px
+.party-D, .party-Democratic
+  color: #0D47A1
+.party-R, .party-Republican
+  color: #B71C1C
+.party-I, .party-Independent
+  color: #6A1B9A
+
+.percent-circle
+  border-radius: 50%
+  color: #FFF
+  padding: 10px
+  padding-top: 40px
+  width: 75px
+.background-party-D
+  background: #0D47A1
+.background-party-R
+  background: #B71C1C
+.background-party-
+  background: #F57F17
+
+
+
+
+.seeMore-container
+  a
+    color: #FFF
+
+  .hover-party-D:hover
+    background: #2196F3
+  .hover-party-R:hover
+    background: #F44336
+  .hover-party-:hover
+    background: #FDD835
+
+.state-title
+  color: #FFF
+
+.contactLink
+  text-decoration: none
+  color: $text-dark
+.littleHeader
+  font-weight: bold
+  font-size: 14px
+  color: #616161
+.contactAddress
+  margin-left: 5px
+  font-weight: bold
+.leg_socal_text
+  margin-top: 15px
+  a
+    text-decoration: none
+    color: $text-dark
+
+.gov-img-container
+  height: 100px
+  width: 100px
+  overflow: hidden
+
+  img
+    height: 100%
+
+
+.leg_profilePic
+  border-radius: 50%
+  height: 100px
+  margin-right: 5px
+.leg_subtitle
+  font-style: italic
+.leg_social_icon
+  height: 25px
+  margin-top: 7px
+.rating
+  i
+    display:inline
+    width: 10px
+    font-size: 16px !important
+    color: #FDD835
+.leg_infoBlock
+  margin-top: 5px
+  margin-bottom: 5px
+.leg_list_img
+    width: 75px
+    margin-left: -15px
+
+.error_title
+  font-size: 200px
+  color: $dark-color
+  margin: 15px
+.error_description
+  font-weight: bold
+  a
+    text-decoration: none
+    color: $primary-color

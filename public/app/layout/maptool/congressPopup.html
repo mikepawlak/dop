@@ -1,0 +1,124 @@
+<md-dialog aria-label="{{state.state}}" style="width: 80%; max-width: 800px">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{state.state}} Representatives</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="close()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <span flex></span>
+      <div layout="column" layout-wrap>
+        <div layout="column" flex-gt-xs="40" class="senatorCard md-whiteframe-6dp" ng-repeat="congressperson in state.congressmen | orderBy:'district'">
+          <!-- Title stuff-->
+          <div layout="row">
+            <span flex="5"></span>
+            <div><h3>{{congressperson.first_name}} {{congressperson.last_name}}
+              <span class="party-{{congressperson.party}}">({{congressperson.party}})</span></h3>
+              <br/>
+              <div style="margin-top: -25px" layout="column">
+                <span><em>{{congressperson.state}} CD {{congressperson.district}}</em></span>
+              </div>
+            </div>
+            <span flex></span>
+            <img class="leg_profilePic md-whiteframe-6dp"  ng-src="{{congressperson.imgUrl}}" alt="{{congressperson.last_name}}">
+          </div>
+          <!--contact info -->
+          <div class="littleHeader" layout="row">
+            <span flex="5"></span>
+            <span>phone </span>
+            <span flex="5"></span>
+            <span><em>effectiveness: </em></span>
+            <div class="rating">
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+            </div>
+          </div>
+          <div layout="row">
+            <span flex="10"></span>
+              <a class="contactLink" href="tel:{{congressperson.phone}}"><span><i class="material-icons">call</i></span>
+                <span><b>{{congressperson.phone}}</b></span></a>
+          </div>
+          <div class="littleHeader" layout="row" ng-hide="{{congressperson.fax == ''}}">
+            <span flex="5"></span>
+            <span>fax </span>
+            <span flex="5"></span>
+            <span><em>effectiveness: </em></span>
+            <div class="rating">
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+            </div>
+          </div>
+          <div layout="row" class="leg_infoBlock" ng-hide="{{congressperson.fax == ''}}">
+            <span flex="10"></span>
+              <a class="contactLink"><span><i class="material-icons">settings_phone</i></span>
+                <span><b>{{congressperson.fax}}</b></span></a>
+          </div>
+          <div class="littleHeader" layout="row">
+            <span flex="5"></span>
+            <span>mail </span>
+            <span flex="5"></span>
+            <span><em>effectiveness: </em></span>
+            <div class="rating">
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+              <i class="material-icons">star_rate</i>
+            </div>
+          </div>
+          <div layout="row" class="leg_infoBlock">
+            <span flex="10"></span>
+            <span><i class="material-icons">markunread_mailbox</i></span>
+                <div class="contactAddress">{{congressperson.office}} <br/> Washington, D.C. 20510</div>
+          </div>
+          <!-- social -->
+          <div class="littleHeader" layout="row" ng-hide="{{(congressperson.twitter_account == '' && congressperson.facebook_account == '' && congressperson.youtube_account == '')}}">
+            <span flex="5"></span>
+            <span>social </span>
+            <span flex="5"></span>
+            <span><em>effectiveness: </em></span>
+            <div class="rating">
+              <i class="material-icons">star_rate</i>
+            </div>
+          </div>
+          <div layout="column" class="leg_infoBlock">
+            <div layout="row" ng-hide="{{congressperson.twitter_account == ''}}">
+              <span flex="5"></span>
+              <md-button ng-href="https://www.twitter.com/{{congressperson.twitter_account}}" target="_blank" class="md-fab md-mini md-primary md-button md-ink-ripple" aria-label="tweet them" type="button" style="background-color: #55acee">
+                  <img class="leg_social_icon" src="../img/icons/twitter.png" alt="twitter">
+                  <div class="md-ripple-container"></div>
+              </md-button>
+              <div class="leg_socal_text"><a ng-href="https://www.twitter.com/{{congressperson.twitter_account}}" target="_blank">@{{congressperson.twitter_account}}</a></div>
+            </div>
+            <div layout="row" ng-hide="{{congressperson.facebook_account == ''}}">
+              <span flex="5"></span>
+              <md-button ng-href="https://www.facebook.com/{{congressperson.facebook_account}}" target="_blank" class="md-fab md-mini md-primary md-button md-ink-ripple" aria-label="facebook them" type="button" style="background-color: #3b5998">
+                  <img class="leg_social_icon" src="../img/icons/facebook.png" alt="facebook">
+                  <div class="md-ripple-container"></div>
+              </md-button>
+              <div class="leg_socal_text"><a ng-href="https://www.facebook.com/{{congressperson.facebook_account}}" target="_blank">@{{congressperson.facebook_account}}</a></div>
+            </div>
+            <div layout="row" ng-hide="{{congressperson.youtube_account == ''}}">
+              <span flex="5"></span>
+              <md-button ng-href="https://www.youtube.com/user/{{congressperson.youtube_account}}" target="_blank" class="md-fab md-mini md-primary md-button md-ink-ripple" aria-label="youtube them" type="button" style="background-color: #e02f2f">
+                  <img class="leg_social_icon" src="../img/icons/youtube.png" alt="youtube">
+                  <div class="md-ripple-container"></div>
+              </md-button>
+              <div class="leg_socal_text"><a ng-href="https://www.youtube.com/user/{{congressperson.youtube_account}}" target="_blank">@{{congressperson.youtube_account}}</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </span flex></span>
+    </md-dialog-content>
+  </form>
+</md-dialog>

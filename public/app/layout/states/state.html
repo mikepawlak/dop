@@ -1,0 +1,85 @@
+<div layout="row" ng-cloak>
+  <span flex></span>
+  <div>
+    <h1 ng-hide="{{(state.stateInfo.leg_name == null)}}">{{state.stateInfo.leg_name}}</h1>
+    <h1 ng-show="{{(state.stateInfo.leg_name == null)}}">{{state.stateInfo.state | capitalize}} State Legislature</h1>
+  </div>
+  <span flex></span>
+</div>
+<div layout="row">
+  <span flex></span>
+  <div>
+  <img style="width: 100%" src="../img/tools/graphics/state.png" alt="states"/>
+  </div>
+  <span flex></span>
+</div>
+<div layout="column" ng-cloak class="state_ind_charts">
+  <div layout="row" layout-xs="column" class="md-whiteframe-4dp" layout-padding layout-margin>
+    <span flex></span>
+    <div layout="column">
+      <div layout="row">
+        <span flex></span>
+        <div><h3>{{state.stateInfo.chambers.upper.name}}</h3></div>
+        <span flex></span>
+      </div>
+      <div layout="row">
+        <span flex></span>
+        <div><canvas style="height: 100px" class="chart chart-doughnut chart-upper" chart-data="data_upper" chart-labels="labels" chart-series="series" chart-click="onClickU"></canvas></div>
+        <span flex></span>
+      </div>
+      <div layout="row">
+        <span flex></span>
+        <div style="margin-top: -20px"><b>(<span class="party-R">{{state.stateInfo.upperR}}</span>/<span class="party-D">{{state.stateInfo.upperD}})</b></div>
+        <span flex></span>
+      </div>
+    </div>
+    <span flex="5" flex-xs="0"></span>
+    <div layout="column">
+      <div layout="row">
+        <span flex></span>
+        <div><h3>{{state.stateInfo.chambers.lower.name}}</h3></div>
+        <span flex></span>
+      </div>
+      <div layout="row">
+        <span flex></span>
+        <div><canvas style="height: 150px" class="chart chart-doughnut chart-lower" chart-data="data_lower" chart-labels="labels" chart-series="series" chart-click="onClickL"></canvas></div>
+        <span flex></span>
+      </div>
+      <div layout="row">
+        <span flex></span>
+        <div style="margin-top: -20px"><b>(<span class="party-R">{{state.stateInfo.lowerR}}</span>/<span class="party-D">{{state.stateInfo.lowerD}})</b></div>
+        <span flex></span>
+      </div>
+    </div>
+    <span flex></span>
+  </div>
+</div>
+<div layout="row" layout-xs="column">
+  <span flex></span>
+  <div>
+    <h3>Upper Chamber</h3>
+    <md-list>
+      <md-list-item class="md-2-line md-whiteframe-2dp" ng-repeat="person in state.legislators | filter: state.filter_upper" ng-click="state.viewLeg(person)">
+        <img ng-src="{{person.photo_url}}" class="md-avatar" alt="{{person.last_name}}" />
+        <div class="md-list-item-text">
+          <h3>{{person.full_name}} (<span class="party-{{person.party}}">{{person.party.charAt(0)}}</span>)</h3>
+          <p>{{item.description}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </div>
+  <span flex="5" flex-xs="0"></span>
+  <div>
+    <h3>Lower Chamber</h3>
+    <md-list>
+      <md-list-item class="md-2-line md-whiteframe-2dp" ng-repeat="person in state.legislators | filter: filter: state.filter_lower"  ng-click="state.viewLeg(person)">
+        <img ng-src="{{person.photo_url}}" class="md-avatar" alt="{{item.who}}" />
+        <div class="md-list-item-text">
+          <h3>{{person.full_name}} (<span class="party-{{person.party}}">{{person.party.charAt(0)}}</span>)</h3>
+          <p>{{item.description}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </div>
+  <span flex></span>
+</div>

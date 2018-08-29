@@ -1,0 +1,49 @@
+<md-dialog aria-label="{{leg.full_name}}" style="width: 80%; max-width: 800px">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools" style="background: {{partyColor(leg.party)}}">
+        <h2>{{leg.full_name}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="close()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div layout="row">
+        <span flex></span>
+        <div layout="column">
+          <span flex></span>
+          <div layout="row">
+            <h3>{{leg.full_name}} (<span style="color: {{partyColor(leg.party)}}">{{leg.party.charAt(0)}}</span>)
+          </div>
+
+          <div layout="row">
+            <p>{{(leg.chamber == "lower")? chamber.lower.name : chamber.upper.name}} District {{leg.district}}
+          </div>
+          <div layout="column">
+            <div layout="column" ng-repeat="office in leg.offices | orderBy:'-type'">
+              <div layout="row" style="color: {{partyColor(leg.party)}}"></span><b>{{office.type | capitalize}}</b></div>
+              <div layout="row" ng-hide="office.phone == null"><span flex="5"></span><em>Phone: </em> {{office.phone}}</div>
+              <div layout="row" ng-hide="office.email == null"><span flex="5"></span><em>Email: </em> {{office.email}}</div>
+              <div layout="row" ng-hide="office.fax == null"><span flex="5"></span><em>Fax: </em> {{office.fax}}</div>
+              <div layout="row" ng-hide="office.address == null"><span flex="5"></span><em>Address: </em> {{office.address}}</div>
+            </div>
+          </div>
+          <span flex></span>
+        </div>
+        <span flex="5"></span>
+        <div>
+          <img src="{{leg.photo_url}}" alt="{{leg.last_name}}" />
+        </div>
+        <span flex></span>
+      </div>
+      <div layout="row">
+        <span flex></span>
+
+        <span flex></span>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

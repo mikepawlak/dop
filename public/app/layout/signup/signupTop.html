@@ -1,0 +1,32 @@
+<div layout="row" class="signup_wrapper md-whiteframe-2dp">
+  <span flex></span>
+  <form ng-hide="signup.submitted" class="signup_container" layout="column" ng-submit="signup.emailSubmit()">
+    <div>
+      <p><b><span class="emph">Signup</span> to get the latest from <span class="emph">DataOnPolitics</span> <em>right in your inbox!</em></b></p>
+    </div>
+    <div class="signup_top">
+      <md-input-container>
+        <label>Name</label>
+        <input ng-model="signup.name" required>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Email</label>
+        <input ng-model="signup.email" type="email" required>
+      </md-input-container>
+    </div>
+    <div class="signup_top" layout="row" ng-hide="signup.submitted">
+      <span flex></span>
+      <div>
+        <md-button class="md-primary md-raised" type="submit">Submit</md-button>
+      </div>
+    </div>
+    <div class="" style="display: inline-block">
+      <md-button ng-click="signup.expand()" class="md-primary md-raised signup_top_ask">Sign Up</md-button>
+    </div>
+  </form>
+  <div ng-show="signup.submitted">
+    <p><span class="text-icon"><i class="material-icons">check_circle</i></span><em>Submitted successfully, thank you for signing up!</em></p>
+  </div>
+  <span flex></span>
+</div>

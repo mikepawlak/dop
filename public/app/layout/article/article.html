@@ -1,0 +1,103 @@
+<featured-post>
+  <h2>{{content.featuredPost.title}}</h2>
+  <p class="subtext">By <span class="keyword">Mike Pawlak</span></p>
+  <div class="featured_infographic"><img src="{{'../img/graphics' + content.featuredPost.graphicSrc}}" alt="voterFraud" class="md-whiteframe-8dp"/></div>
+  <h3>{{content.featuredPost.subTitle}}</h3>
+  <p>{{content.featuredPost.summary}}</p>
+  <div ng-bind-html="content.featuredPost.content"></div>
+  <div class="pills">
+    <div ng-repeat="tag in content.featuredPost.tags" class="pillContainer">
+      <a href="/search/{{tag}}">
+        <div class="pill md-whiteframe-2dp">
+          {{tag}}
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="social_media_buttons">
+    <md-button class="md-fab md-mini md-primary" aria-label="Tweet this post" style="background-color: #55acee">
+      <md-tooltip>Tweet this post</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="twitter"
+      socialshare-text="{{content.featuredPost.title}}"
+      socialshare-hashtags="{{content.featuredPost.hashtags}}"
+      socialshare-url="http://dataonpolitics.com/article/{{content.featuredPost._id}}">
+        <img class="social_icon" src="../img/icons/twitter.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini" aria-label="Share on Facebook" style="background-color: #3b5998">
+      <md-tooltip>Share on Facebook</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="facebook"
+      socialshare-url="http://dataonpolitics.com/article/{{content.featuredPost._id}}">
+        <img class="social_icon" src="../img/icons/facebook.png" alt="facebook"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Pin this post" style="background-color: #bd2026">
+      <md-tooltip>Pin this post</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="pinterest"
+      socialshare-text="{{content.featuredPost.title}}"
+      socialshare-media="http://dataonpolitics.com{{'img/graphics' + content.featuredPost.graphicSrc}}"
+      socialshare-url="http://dataonpolitics.com/article/{{content.featuredPost._id}}">
+        <img class="social_icon" src="../img/icons/pintrest.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Post on Tumblr" style="background-color: #35465d">
+      <md-tooltip>Post on Tumblr</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="tumblr"
+      socialshare-text="{{content.featuredPost.title}}"
+      socialshare-media="http://dataonpolitics.com{{'img/graphics' + content.featuredPost.graphicSrc}}"
+      socialshare-url="http://dataonpolitics.com/article/{{content.featuredPost._id}}">
+        <img class="social_icon" src="../img/icons/tumblr.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Post on Reddit" style="background-color: #f54b00">
+      <md-tooltip>Post on Reddit</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="reddit"
+      socialshare-url="http://dataonpolitics.com/article/{{content.featuredPost._id}}">
+        <img class="social_icon" src="../img/icons/reddit.png" alt="reddit"/>
+      </a>
+    </md-button>
+  </div>
+  <div class="shareUrl" layout="row">
+    <span flex></span>
+    <div><b><em>Share this post:</b></em></div>
+    <div class="inputContainer"><input type="text" label="share this post" name="share url" value="{{content.shareUrl}}"></div>
+    <div class="clickCopy">
+      <md-button ngclipboard data-clipboard-target=".inputContainer" class="md-icon-button">
+        <md-tooltip>Copy Url</md-tooltip>
+        <i class="material-icons">content_copy</i>
+      </md-button>
+    </div>
+    <span flex></span>
+  </div>
+</featured-post>
+<hr/>
+<signup></signup>
+<div class="divider">
+  <hr/>
+  <span id="recent_title">See Also</span>
+</div>
+<div id="recent" layout="column">
+  <span flex></span>
+  <div class="recent-post" ng-repeat="post in content.posts">
+    <span flex></span>
+    <div layout="column">
+      <div class="recent-title">
+        <h3><a href="/article/{{post._id}}">{{post.title}}</a></h3>
+        <p>{{post.summary}}</p>
+      </div>
+      <div class="blog-graphic"><img src="../img/graphics/{{post.graphicSrc}}" alt="{{post.graphicSrc}}" /></div>
+      <span flex></span>
+    </div>
+  </div>
+  <span flex></span>
+</div>

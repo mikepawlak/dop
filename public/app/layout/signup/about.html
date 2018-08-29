@@ -1,0 +1,43 @@
+<span flex></span>
+<div style="max-width: 900px">
+  <h2>About Data On Politics</h2>
+  <p>Data On Politics is a progressive site dedicated to making data and statistics on American politics as accessible as possible.</p>
+  <p>Started on the 100th day mark of the 45th president, recent political events have convinced the site’s creators that easy understanding of data and mathematical fact surrounding political news is more important than ever before and strive to bring you accurate data in an easily digestible manner. </p
+  <br/>
+  <h3>Contact Us</h3>
+  <p>Questions or comments? Fill out the brief form below to get in touch.</p>
+  <form name="submitForm" ng-submit="about.submitMessage()">
+    <div layout="row">
+      <span flex></span>
+      <md-input-container>
+        <label>Name</label>
+        <input name="name" ng-model="about.form.name" required>
+        <div>
+          <div ng-message="required">This is required!</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Email</label>
+        <input name="email" ng-model="about.form.email" required>
+        <div>
+          <div ng-message="required">This is required!</div>
+        </div>
+      </md-input-container>
+      <span flex></span>
+  </div>
+  <md-input-container class="md-block">
+    <label>Message</label>
+    <textarea ng-model="about.form.message" md-maxlength="300" rows="5" md-select-on-focus required></textarea>
+  </md-input-container>
+  <div layout="row">
+    <md-input-container>
+        <md-checkbox name="signup" ng-model="about.form.signup" class="md-primary">
+          Sign me up for the newsletter!
+        </md-checkbox>
+      </md-input-container>
+      <span flex></span>
+    <div><md-button type="submit" class="md-primary md-raised">Submit</md-button></div>
+  </div>
+  </form>
+</div>
+<span flex></span>

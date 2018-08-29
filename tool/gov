@@ -1,0 +1,249 @@
+{
+    "state": "Alabama", "party" : "R",  "Governor": "Kay Ivey"
+}
+
+,
+{
+    "state": "Alaska", "party" : "I",  "Governor": "Bill Walker"
+}
+
+,
+{
+    "state": "Arizona", "party" : "R",  "Governor": "Doug Ducey"
+}
+
+,
+{
+    "state": "Arkansas", "party" : "R",  "Governor": "Asa Hutchinson"
+}
+
+,
+{
+    "state": "California", "party" : "D",  "Governor": "Jerry Brown"
+}
+
+,
+{
+    "state":"Colorado", "party" : "D",  "Governor":"John Hickenlooper"
+}
+
+,
+{
+    "state": "Connecticut", "party" : "D",  "Governor": "Dannel Malloy"
+}
+
+,
+{
+    "state": "Delaware", "party" : "D",  "Governor": "John C. Carney Jr."
+}
+
+,
+{
+    "state": "Florida", "party" : "R",  "Governor": "Rick Scott"
+}
+
+,
+{
+    "state": "Georgia", "party" : "R",  "Governor": "Nathan Deal"
+}
+
+,
+
+{
+    "state": "Hawaii", "party" : "D",  "Governor": "David Ige"
+}
+
+,
+{
+    "state": "Idaho", "party" : "R",  "Governor": "Butch Otter"
+}
+
+,
+{
+    "state": "Illinois", "party" : "R",  "Governor": "Bruce Rauner"
+}
+
+,
+{
+    "state":"Indiana", "party" : "R",  "Governor" : "Eric Holcomb"
+}
+
+,
+{
+    "state": "Iowa", "party" : "R",  "Governor": "Kim Reynolds"
+}
+
+,
+{
+    "state":"Kansas", "party" : "R",  "Governor": "Sam Brownback"
+}
+
+,
+{
+    "state": "Kentucky", "party" : "R",  "Governor": "Matt Bevin"
+}
+
+,
+{
+    "state": "Louisiana", "party" : "D",  "Governor": "John Bel Edwards"
+}
+
+,
+{
+    "state": "Maine", "party" : "R",  "Governor": "Paul LePage"
+}
+
+,
+{
+    "state": "Maryland", "party" : "R",  "Governor": "Larry Hogan"
+}
+
+,
+{
+    "state": "Massachusetts", "party" : "R",  "Governor": "Charlie Baker"
+}
+
+,
+{
+    "state": "Michigan", "party" : "R",  "Governor": "Rick Snyder"
+}
+
+,
+{
+    "state":"Minnesota", "party" : "D",  "Governor":"Mark Dayton"
+}
+
+,
+{
+    "state": "Mississippi", "party" : "R",  "Governor": "Phil Bryant"
+}
+
+,
+{
+    "state": "Missouri", "party" : "R",  "Governor": "Eric Greitens"
+}
+
+,
+{
+    "state": "Montana", "party" : "D",  "Governor": "[Steve Bullock"
+}
+
+,
+{
+    "state": "Nebraska", "party" : "R",  "Governor": "Pete Ricketts"
+}
+
+,
+{
+    "state":"Nevada", "party" : "R",  "Governor":"Brian Sandoval"
+}
+
+,
+{
+    "state":"New Hampshire", "party" : "R",   "Governor":"Chris Sununu"
+}
+
+,
+{
+    "state":"New Jersey", "party" : "R",  "Governor":"Chris Christie"
+}
+
+,
+{
+    "state":"New Mexico", "party" : "R",  "Governor":"Susana Martinez"
+}
+
+,
+{
+    "state": "New York", "party" : "D",  "Governor": "Andrew Cuomo"
+}
+
+,
+{
+    "state":"North Carolina", "party" : "D",  "Governor":"Roy Cooper"
+}
+
+,
+{
+    "state": "North Dakota", "party" : "R",  "Governor": "Doug Burgum"
+}
+,
+{
+    "state": "Oklahoma", "party" : "",  "Governor": "Mary Fallin"
+}
+
+,
+{
+    "state": "Ohio", "party" : "R",  "Governor": "John Kasich"
+}
+
+,
+{
+    "state": "Oregon", "party" : "D",  "Governor": "Kate Brown"
+}
+
+,
+{
+    "state":"Pennsylvania", "party" : "D",  "Governor":"Tom Wolf"
+}
+
+
+,
+{
+    "state": "Rhode Island", "party" : "D",  "Governor": "Gina Raimondo"
+}
+
+,
+{
+    "state":"South Carolina", "party" : "R",  "Governor":"Henry McMaster"
+}
+
+,
+{
+    "state":"South Dakota", "party" : "R",  "Governor":"Dennis Daugaard"
+}
+
+,
+{
+    "state": "Tennessee", "party" : "R",  "Governor": "Bill Haslam"
+}
+
+,
+{
+    "state": "Texas", "party" : "R",  "Governor": "Greg Abbott"
+}
+
+,
+{
+    "state": "Utah", "party" : "R",  "Governor": "Gary Herbert"
+}
+
+,
+{
+    "state": "Vermont", "party" : "",  "Governor": "Phil Scott"
+}
+
+,
+{
+    "state":"Virginia", "party" : "R",  "Governor":"Terry McAuliffe"
+}
+
+,
+{
+    "state": "Washington", "party" : "D",  "Governor": "Jay Inslee"
+}
+
+,
+{
+    "state": "West Virginia", "party" : "D",  "Governor": "Jim Justice"
+}
+
+,
+{
+    "state": "Wisconsin", "party" : "R",  "Governor": "Scott Walker"
+}
+
+,
+{
+    "state": "Wyoming", "party" : "R",  "Governor": "Matt Mead"
+}

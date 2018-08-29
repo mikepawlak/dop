@@ -1,0 +1,22 @@
+<div id="recent" layout="column">
+  <span flex></span>
+  <div class="recent-post" ng-repeat="post in blog.posts">
+    <span flex></span>
+    <div layout="column">
+      <div class="recent-title">
+        <a href="article/{{ post._id }}">
+          <h3>{{post.title}}</h3>
+          <p>{{post.summary}}</p>
+        </a>
+      </div>
+      <div class="blog-graphic">
+        <a href="article/{{ post._id }}">
+          <img src="img/graphics/{{post.graphicSrc}}" alt="{{post.graphicSrc}}" />
+        </a>
+      </div>
+      <span flex></span>
+    </div>
+    <hr/>
+  </div>
+  <span flex></span>
+</div>

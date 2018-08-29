@@ -1,0 +1,120 @@
+
+<div class="gallery-nav-top" layout="row" hide-xs>
+  <span flex></span>
+  <div><md-button class="prev" ng-click="img.prev()"><i class="material-icons">navigate_before</i></md-button></div>
+  <span flex="20"></span>
+  <div><md-button class="next" ng-click="img.next()"><i class="material-icons">navigate_next</i></md-button></div>
+  <span flex></span>
+</div>
+  <!-- Slider main container -->
+<ks-swiper-container
+      ng-dblclick="img.showDialog()"
+      swiper="img.swiper"
+      override-parameters="{
+                            'autoHeight' : 'true',
+                            'nextButton': '.next',
+                            'prevButton': '.prev',
+                            'observer' : true
+                            }"
+      class="img-wrapper"
+      on-ready="img.swiperReady()" flex>
+    <!-- Additional required wrapper -->
+    <ks-swiper-slide class="swiper-slide"   ng-repeat="image in img.imagePool">
+      <img
+        class="swiper-slide infographic"
+        ng-src="{{image.internalUrl}}"
+        alt="{{image.internalUrl}}" />
+  </ks-swiper-slide>
+</ks-swiper-container>
+<div class="img-description" flex>
+  <em>Originally on <a class="author-link" href="{{img.imagePool[img.imgIndex].externalUrl}}">{{img.imagePool[img.imgIndex].sourceName}}</a></em>
+  <div class="pills">
+    <div ng-repeat="tag in img.imagePool[img.imgIndex].tags" class="pillContainer">
+      <a href="/search/{{tag}}">
+        <div class="pill md-whiteframe-2dp">
+          {{tag}}
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div>
+  <span flex></span>
+  <div><em>{{img.imagePool[img.imgIndex].title}}</em></div>
+  <span flex></span>
+</div>
+<div class="img-tools" ng-show="img.pool[imgIndex].sourceName" flex>
+  <div class="social_media_buttons">
+    <md-button class="md-fab md-mini md-primary" aria-label="Tweet this post" style="background-color: #55acee">
+      <md-tooltip>Tweet this post</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="twitter"
+      socialshare-text="{{img.imagePool[img.imgIndex].title}}"
+      socialshare-hashtags=""
+      socialshare-url="http://dataonpolitics.com/images/{{img.imagePool[img.imgIndex]._id}}">
+        <img class="social_icon" src="img/icons/twitter.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini" aria-label="Share on Facebook" style="background-color: #3b5998">
+      <md-tooltip>Share on Facebook</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="facebook"
+      socialshare-url="http://dataonpolitics.com/images/{{img.imagePool[img.imgIndex]._id}}">
+        <img class="social_icon" src="img/icons/facebook.png" alt="facebook"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Pin this post" style="background-color: #bd2026">
+      <md-tooltip>Pin this post</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="pinterest"
+      socialshare-text="{{img.imagePool[img.imgIndex].title}}"
+      socialshare-media="{{img.imagePool[img.imgIndex].internalUrl}}"
+      socialshare-url="http://dataonpolitics.com/images/{{img.imagePool[img.imgIndex]._id}}">
+        <img class="social_icon" src="img/icons/pintrest.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Post on Tumblr" style="background-color: #35465d">
+      <md-tooltip>Post on Tumblr</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="tumblr"
+      socialshare-text="{{img.imagePool[img.imgIndex].title}}"
+      socialshare-media="{{img.imagePool[img.imgIndex].internalUrl}}"
+      socialshare-url="http://dataonpolitics.com/images/{{img.imagePool[img.imgIndex]._id}}">
+        <img class="social_icon" src="img/icons/tumblr.png" alt="twitter"/>
+      </a>
+    </md-button>
+    <md-button class="md-fab md-mini md-primary" aria-label="Post on Reddit" style="background-color: #f54b00">
+      <md-tooltip>Post on Reddit</md-tooltip>
+      <a href="#"
+      socialshare
+      socialshare-provider="reddit"
+      socialshare-url="http://dataonpolitics.com/images/{{img.imagePool[img.imgIndex]._id}}">
+        <img class="social_icon" src="img/icons/reddit.png" alt="reddit"/>
+      </a>
+    </md-button>
+  </div>
+  <div class="shareUrl" layout="row">
+    <span flex></span>
+    <div><b><em>Share this post:</b></em></div>
+    <div class="inputContainer"><input type="text" label="share this post" name="share url" value="{{img.shareUrl}}"></div>
+    <div class="clickCopy">
+      <md-button ngclipboard data-clipboard-target=".inputContainer" class="md-icon-button">
+        <md-tooltip>Copy Url</md-tooltip>
+        <i class="material-icons">content_copy</i>
+      </md-button>
+    </div>
+    <span flex></span>
+  </div>
+</div>
+<div class="gallery-nav-top" layout="row" hide-xs>
+  <span flex></span>
+  <div><md-button class="prev" ng-click="img.prev()"><i class="material-icons">navigate_before</i></md-button></div>
+  <span flex="10"></span>
+  <div><md-button class="next" ng-click="img.next()"><i class="material-icons">navigate_next</i></md-button></div>
+  <span flex></span>
+</div>
+<signup></signup>

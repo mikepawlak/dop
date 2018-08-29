@@ -1,0 +1,54 @@
+<div layout="column">
+  <div layout="row" class="search_title">
+    <span flex></span>
+    <div><h2>Search results for <em>"{{ search.term }}"</em></h2></div>
+    <span flex></span>
+  </div>
+  <div class="blog_results" ng-show="search.resultsArticles.length > 0">
+    <div><h4>Articles</h4></div>
+    <div class="recent-post" ng-repeat="post in search.resultsArticles">
+      <span flex></span>
+      <div layout="column">
+        <div class="recent-title">
+          <a href="article/{{ post._id }}">
+            <h3>{{post.title}}</h3>
+            <p>{{post.summary}}</p>
+          </a>
+        </div>
+        <div class="blog-graphic">
+          <a href="/article/{{ post._id }}">
+            <img src="/img/graphics/{{post.graphicSrc}}" alt="{{post.graphicSrc}}" />
+          </a>
+        </div>
+        <span flex></span>
+      </div>
+      <hr/>
+    </div>
+    <span flex></span>
+  </div>
+  <div class="image_results" ng-show="search.resultsGallery.length > 0">
+    <div><h4>Gallery</h4></div>
+    <gallery-grid layout="row">
+      <span flex></span>
+      <md-grid-list
+          flex="90"
+          md-row-height="4:3"
+          md-cols-xs="1"
+          md-row-xs="2"
+          md-cols-sm="2"
+          md-cols-md="2"
+          md-cols-gt-md="2">
+        <md-grid-tile ng-repeat="image in search.resultsGallery">
+          <div class="md-whiteframe-2dp">
+            <a href="/images#/{{ image._id }}">
+              <md-grid-tile-header>{{image.title}}</md-grid-tile-header>
+              <img src="{{image.internalUrl}}" alt="{{image.title}}" />
+            </a>
+          </div>
+        </md-grid-tile>
+      </md-grid-list>
+      <span flex></span>
+    </gallery-grid>
+  </div>
+</div>
+<signup></signup>

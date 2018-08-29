@@ -1,0 +1,21 @@
+<gallery-grid layout="row">
+  <span flex></span>
+  <md-grid-list
+      flex="90"
+      md-row-height="4:3"
+      md-cols-xs="1"
+      md-row-xs="2"
+      md-cols-sm="2"
+      md-cols-md="2"
+      md-cols-gt-md="2">
+    <md-grid-tile ng-repeat="image in gallery.gallery">
+      <div>
+        <a href="/images#/{{ image._id }}">
+          <md-grid-tile-header>{{image.title}}</md-grid-tile-header>
+          <img ng-src="{{image.internalUrl}}" alt="{{image.title}}" />
+        </a>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+  <span flex></span>
+</gallery-grid>
